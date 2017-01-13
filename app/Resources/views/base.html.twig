@@ -2,12 +2,88 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+        <title>{% block title %}Fantoni{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+
+    <link rel="icon" type="image/x-icon" href="{{asset('images/LogoBotao.png')}}"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{{asset('css/main.css')}}" />
+
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-84148692-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+<body>
+
+
+    <!-- Header -->
+    <div id="header-wrapper">
+        <header id="header" class="container">
+            <div class="row">
+                <div class="12u">
+
+                    <!-- Logo -->
+                    <h1><a href="{{path('home')}}" id="logo"><img src="{{asset('images/logo.png')}}" alt="Fantoni Manutenção" title="Fantoni Manutenção"/></a></h1>
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <a href="{{path('home')}}">Home</a>
+                        <a href="fantoni.html">Fantoni</a>
+                        <a href="{{path('servicos_index')}}">Serviços</a>
+                        <a href="contato.html">Contato</a>
+                    </nav>
+
+                </div>
+            </div>
+        </header>
+
+        <div id="page-wrapper">
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+
+    </div>
+
+
+    <!-- Copyright -->
+    <div id="copyright">
+        &copy; Todos os direitos reservados | Design: <a href="http://criaative.com.br">criaative web design</a>
+    </div>
+
+
+
+{% block javascripts %}{% endblock %}
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/skel-viewport.min.js"></script>
+<script src="js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="js/main.js"></script>
+
+
+</body>
 </html>
+

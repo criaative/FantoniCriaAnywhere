@@ -1,0 +1,40 @@
+<?php
+
+namespace FantoniBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ *  Description of Servicos
+ *
+ * @author Criaative
+ * 
+ * @ORM\Entity
+ * @ORM\Table(name="servicos")
+ */
+class Servicos
+{
+    /**
+    * @ORM\Column(type="integer")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    private $id;
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $nome;
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $imagem;
+    
+    /**
+     * @ORM\Column(type="string", length=1000)
+     */
+    private $descricao;
+
+}
